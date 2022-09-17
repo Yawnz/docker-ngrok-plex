@@ -7,7 +7,9 @@ LABEL maintainer="OrigamiOfficial"
 
 # environment settings
 WORKDIR /root
-ENV PLEX_BaseURL 'http://127.0.0.1:32400'
+ENV PLEX_BaseIP '127.0.0.1'
+ENV PLEX_BasePort '32400'
+ENV PLEX_BaseURL 'http://${PLEX_BaseIP}:${PLEX_BasePort}'
 ENV PLEX_Token 'XXXXXXXXXX'
 ENV NGROK_Token 'XXXXXXXXXX'
 

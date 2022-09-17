@@ -8,7 +8,7 @@ echo -e "0 */6 * * *    root    /bin/python3 /root/ngrok-plex.py" >> /etc/cronta
 cron
 
 # target run
-ngrok tcp 32400 & python3 ./ngrok-plex.py
+ngrok tcp $PLEX_BaseIP:$PLEX_BasePort & python3 ./ngrok-plex.py
 
 # keep the container running
 sleep infinity
