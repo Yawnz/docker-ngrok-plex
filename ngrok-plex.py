@@ -64,7 +64,7 @@ def build_url_list():
 # Load user defined config"
 PLEX_BaseIP=os.environ['PLEX_BaseIP']
 PLEX_BasePort=os.environ['PLEX_BasePort']
-PLEX_BaseURL = f'https://{PLEX_BaseIP}:{PLEX_BasePort}'
+PLEX_BaseURL = f'http://{PLEX_BaseIP}:{PLEX_BasePort}'
 PLEX_Token = os.environ['PLEX_Token']
 
 # stores plex user login info into a variable
