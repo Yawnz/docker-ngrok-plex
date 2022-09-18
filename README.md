@@ -1,3 +1,5 @@
+# This is a modified version of the original ngrok-plex that allows you to specify the tunnel ip address if plex is running somewhere other than localhost. All credits go to the original authors.
+
 # ngrok-plex ![Docker Pulls](https://img.shields.io/docker/pulls/rlabinc/ngrok-plex.svg?style=flat&label=pulls&logo=docker) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/rlabinc/ngrok-plex/latest.svg?style=flat&label=image&logo=docker) ![GitHub Repo stars](https://img.shields.io/github/stars/origamiofficial/ngrok-plex?style=social)
 
 [ngrok-plex](https://gist.github.com/nagleaidan/dcc132c16d15565d88bf2d9200351c6e) is a command line utility to run Plex through ngrok to bypass CGNAT or Double-NAT scenario.
@@ -6,7 +8,7 @@
 
 We utilise the docker buildx for multi-platform awareness. More information is available from docker [here](https://docs.docker.com/buildx/working-with-buildx/).
 
-Simply pulling `rlabinc/ngrok-plex:latest` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
+Simply pulling `daemosofchaos/ngrok-plex-daemos:latest` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
 
 The architectures supported by this image are:
 
@@ -31,10 +33,11 @@ Here are the commands you'll need:
 docker run -d --network host \
   --name=ngrok-plex \
   -e TZ=Europe/London `#optional` \
-  -e PLEX_BaseURL='http://127.0.0.1:32400' `#better to use single quotes` \
-  -e PLEX_Token='XXXXXXXXXX' `#better to use single quotes` \
-  -e NGROK_Token='XXXXXXXXXX' `#better to use single quotes` \
-  rlabinc/ngrok-plex:latest
+  -e PLEX_BaseIP=127.0.0.1
+  -e PLEX_BasePort=32400
+  -e PLEX_Token=XXXXXXXXXX
+  -e NGROK_Token=XXXXXXXXXX
+  daemosofchaos/ngrok-plex-daemos:latest
 ```
 
 A cronjob will update new ngrok URL every 6 hours.
@@ -51,10 +54,10 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e NGROK_Token='XXXXXXXXXX'` | Specify ngrok token to use. |
 
 ## Github Repository
-https://github.com/origamiofficial/ngrok-plex
+https://github.com/Yawnz/docker-ngrok-plex
 
 ## Docker Hub
-https://hub.docker.com/r/rlabinc/ngrok-plex
+https://hub.docker.com/repository/docker/daemosofchaos/ngrok-plex-daemos
 
 ## Acknowledgements
 All credit goes to [@nagleaidan](https://github.com/nagleaidan). Special thanks to [@Rihcus](https://github.com/Rihcus) for fixing many issues.
