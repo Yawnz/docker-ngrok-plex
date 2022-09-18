@@ -49,9 +49,10 @@ Container images are configured using parameters passed at runtime (such as thos
 | Parameter | Function |
 | :----: | --- |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
-| `-e PLEX_BaseURL='http://127.0.0.1:32400'` | Specify Plex URL to use. |
-| `-e PLEX_Token='XXXXXXXXXX'` | Specify Plex token to use. |
-| `-e NGROK_Token='XXXXXXXXXX'` | Specify ngrok token to use. |
+| `-e PLEX_BaseIP=127.0.0.1` | Specify Plex IP to use. This also sets the tunnel IP. |
+| `-e PLEX_BasePort=32400` | Specify Plex Port to use. |
+| `-e PLEX_Token=XXXXXXXXXX` | Specify Plex token to use. |
+| `-e NGROK_Token=XXXXXXXXXX` | Specify ngrok token to use. |
 
 ## Github Repository
 https://github.com/Yawnz/docker-ngrok-plex
